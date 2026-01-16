@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Travel Buddy — RP Student Travel Hub</title>
+
+  <style>
+    :root{
+      --text:#f3f6ff;
+      --muted:rgba(243,246,255,.8);
+      --overlay:rgba(2,6,23,.65);
+      --cardOverlay:rgba(2,6,23,.72);
+      --line:rgba(255,255,255,.16);
+      --btn:rgba(255,255,255,.14);
+      --btnHover:rgba(255,255,255,.22);
+      --radius:18px;
+      --shadow:0 18px 45px rgba(0,0,0,.45);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      min-height:100vh;
+      background:
+        linear-gradient(var(--overlay), var(--overlay)),
+        url("https://img1.wsimg.com/isteam/ip/7e5ed94d-1f2f-4064-94d9-8f27c9cdec58/travel.jpg")
+        center/cover no-repeat fixed;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:44px 18px 60px;
+    }
+
+    /* HERO */
+    .hero{
+      background:rgba(15,23,42,.65);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      margin-bottom:22px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(26px,4vw,40px);
+    }
+
+    .subtitle{
+      margin:0;
+      max-width:820px;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:14.5px;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:16px;
+    }
+
+    .card{
+      grid-column:span 6;
+      position:relative;
+      height:260px;
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+      transition:transform .2s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      z-index:0;
+    }
+
+    .card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        180deg,
+        rgba(2,6,23,.55),
+        rgba(2,6,23,.85)
+      );
+      z-index:1;
+    }
+
+    .content{
+      position:relative;
+      z-index:2;
+      padding:18px;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+    }
+
+    .flag{
+      font-size:26px;
+      margin-bottom:6px;
+    }
+
+    h3{
+      margin:0 0 6px;
+      font-size:20px;
+    }
+
+    .desc{
+      font-size:13.5px;
+      color:var(--muted);
+      line-height:1.55;
+      margin-bottom:12px;
+      max-width:90%;
+    }
+
+    .btn{
+      align-self:flex-start;
+      padding:9px 14px;
+      background:var(--btn);
+      border:1px solid var(--line);
+      border-radius:12px;
+      text-decoration:none;
+      color:#fff;
+      font-size:13.5px;
+      transition:.15s ease;
+    }
+
+    .btn:hover{
+      background:var(--btnHover);
+    }
+
+    .coming{
+      opacity:.75;
+    }
+
+    footer{
+      margin-top:26px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      font-size:12.5px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    @media(max-width:900px){
+      .card{ grid-column:span 12; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <section class="hero">
+      <h1>AI Travel Buddy — RP Student Travel Hub</h1>
+      <p class="subtitle">
+        This page connects all our team’s country travel guides. It is designed to help RP students plan overseas trips easily,
+        using student-friendly budgets, simple itineraries, and practical travel tips.
+        Click a country to explore the full guide created by each team member.
+      </p>
+    </section>
+
+    <section class="grid">
+
+      <!-- China -->
+      <article class="card" style="--img:url('https://bangkokattractions.com/wp-content/uploads/2023/01/china.jpg')">
+        <style>.card[style*="china.jpg"]::before{background-image:var(--img);}</style>
+        <div class="content">
+          <div class="flag">🇨🇳</div>
+          <h3>China</h3>
+          <p class="desc">
+            Friendly for students with affordable food, efficient transport, and rich cultural landmarks.
+            Ideal for budget-conscious travellers exploring history and modern cities.
+          </p>
+          <a class="btn" href="https://gmcalvin.github.io/ai-travel-buddy/" target="_blank">Open Site →</a>
+        </div>
+      </article>
+
+      <!-- Thailand -->
+      <article class="card" style="--img:url('https://assets-global.website-files.com/5ea992a5dcf9009f68802a74/5ea992a5dcf9002d51803c49_shutterstock_238473214-temple-sunset-wat-none-kum-thailand.jpg')">
+        <style>.card[style*="thailand"]::before{background-image:var(--img);}</style>
+        <div class="content">
+          <div class="flag">🇹🇭</div>
+          <h3>Thailand</h3>
+          <p class="desc">
+            Very student-friendly with low daily costs, street food culture, and vibrant attractions.
+            Perfect for first-time travellers and short trips.
+          </p>
+          <a class="btn" href="https://23011205-raynard.github.io/ai-travel-buddy/" target="_blank">Open Site →</a>
+        </div>
+      </article>
+
+      <!-- Korea -->
+      <article class="card" style="--img:url('https://tse1.mm.bing.net/th/id/OIP.auHftHgE5TxdKQhqnO8R2AHaE8?rs=1&pid=ImgDetMain&o=7&rm=3')">
+        <style>.card[style*="OIP.auHft"]::before{background-image:var(--img);}</style>
+        <div class="content">
+          <div class="flag">🇰🇷</div>
+          <h3>Korea</h3>
+          <p class="desc">
+            Safe and well-connected with clear transport systems, modern cities, and strong pop culture appeal.
+            Suitable for students who enjoy city travel.
+          </p>
+          <a class="btn" href="https://shvqi.github.io/ai-travel-buddy/" target="_blank">Open Site →</a>
+        </div>
+      </article>
+
+      <!-- Philippines -->
+      <article class="card" style="--img:url('https://th.bing.com/th/id/OIP.Ul6QQ2hoK7CeWoF-ACQHugHaDt?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3')">
+        <style>.card[style*="Ul6QQ"]::before{background-image:var(--img);}</style>
+        <div class="content">
+          <div class="flag">🇵🇭</div>
+          <h3>Philippines</h3>
+          <p class="desc">
+            Known for friendly locals, beautiful beaches, and relaxed travel pace.
+            Great for students looking for nature, island hopping, and value-for-money trips.
+          </p>
+          <a class="btn" href="https://lowwayjiajimmy.github.io/c240-CA_Philippines/" target="_blank">Open Site →</a>
+        </div>
+      </article>
+
+      <!-- Japan (Coming Soon) -->
+      <article class="card coming" style="--img:url('https://th.bing.com/th/id/OIP.8nESXGdIkVdCAyBo4EUOiQHaE0?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3')">
+        <style>.card[style*="8nESXG"]::before{background-image:var(--img);}</style>
+        <div class="content">
+          <div class="flag">🇯🇵</div>
+          <h3>Japan</h3>
+          <p class="desc">
+            Highly organised and safe, with reliable transport and unique cultural experiences.
+            Guide currently in progress.
+          </p>
+          <span class="btn" style="cursor:not-allowed; opacity:.7;">Coming Soon</span>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <div>© 2026 AI Travel Buddy</div>
+      <div>Built for RP students • GitHub Pages</div>
+    </footer>
+
+  </div>
+</body>
+</html>
